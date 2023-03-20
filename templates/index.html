@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Accidents Monitor</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+<div class="login-root">
+    <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
+        <div class="loginbackground box-background--white padding-top--64">
+            <div class="loginbackground-gridContainer">
+                <div class="box-root flex-flex" style="grid-area: top / start / 8 / end;">
+                    <div class="box-root"
+                         style="background-image: linear-gradient(white 0%, rgb(247, 250, 252) 33%); flex-grow: 1;">
+                    </div>
+                </div>
+                <div class="box-root flex-flex" style="grid-area: 4 / 2 / auto / 5;">
+                    <div class="box-root box-divider--light-all-2 animationLeftRight tans3s"
+                         style="flex-grow: 1;"></div>
+                </div>
+                <div class="box-root flex-flex" style="grid-area: 6 / start / auto / 2;">
+                    <div class="box-root box-background--blue800" style="flex-grow: 1;"></div>
+                </div>
+                <div class="box-root flex-flex" style="grid-area: 7 / start / auto / 4;">
+                    <div class="box-root box-background--blue animationLeftRight" style="flex-grow: 1;"></div>
+                </div>
+                <div class="box-root flex-flex" style="grid-area: 8 / 4 / auto / 6;">
+                    <div class="box-root box-background--gray100 animationLeftRight tans3s" style="flex-grow: 1;"></div>
+                </div>
+                <div class="box-root flex-flex" style="grid-area: 2 / 15 / auto / end;">
+                    <div class="box-root box-background--cyan200 animationRightLeft tans4s" style="flex-grow: 1;"></div>
+                </div>
+                <div class="box-root flex-flex" style="grid-area: 3 / 14 / auto / end;">
+                    <div class="box-root box-background--blue animationRightLeft" style="flex-grow: 1;"></div>
+                </div>
+                <div class="box-root flex-flex" style="grid-area: 4 / 17 / auto / 20;">
+                    <div class="box-root box-background--gray100 animationRightLeft tans4s" style="flex-grow: 1;"></div>
+                </div>
+                <div class="box-root flex-flex" style="grid-area: 5 / 14 / auto / 17;">
+                    <div class="box-root box-divider--light-all-2 animationRightLeft tans3s"
+                         style="flex-grow: 1;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+            <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+                <h1><a href="/" rel="dofollow">Accidents Classifier</a></h1>
+            </div>
+            <table>
+                <thead>
+                <form name="myform" id="myform" action="/generateactionplan" method="post">
+                    <tr>
+                        <td width="100%">
+                            <div class="formbg-outer padding-bottom--15">
+                                <div class="formbg padding-bottom--15  padding-top--24" style="padding-left: 50px;">
+                                    <span class="padding-bottom--15">Describe the accident:</span>
+                                    <div class="field padding-bottom--24">
+                                        <label for="email"></label>
+                                        <textarea name="desc" cols="151" rows="10" class="my-textarea" required
+                                                  value="{{ desc }}">{{ desc }} </textarea>
+                                    </div>
+                                    <div class="field padding-bottom--24" style="width: 30%;">
+                                        <input type="submit" name="submit" value="Generate Action Plan">
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </form>
+                </thead>
+            </table>
+        </div>
+        {% if action_plan != "None" %}
+            <div class="loginbackground box-background--white padding-top--64">
+                <div class="loginbackground-gridContainer">
+                    <div class="box-root flex-flex" style="grid-area: top / start / 8 / end;">
+                        <div class="box-root"
+                             style="background-image: linear-gradient(white 0%, rgb(247, 250, 252) 33%); flex-grow: 1;">
+                        </div>
+                    </div>
+                    <div class="box-root flex-flex" style="grid-area: 4 / 2 / auto / 5;">
+                        <div class="box-root box-divider--light-all-2 animationLeftRight tans3s"
+                             style="flex-grow: 1;"></div>
+                    </div>
+                    <div class="box-root flex-flex" style="grid-area: 6 / start / auto / 2;">
+                        <div class="box-root box-background--blue800" style="flex-grow: 1;"></div>
+                    </div>
+                    <div class="box-root flex-flex" style="grid-area: 7 / start / auto / 4;">
+                        <div class="box-root box-background--blue animationLeftRight" style="flex-grow: 1;"></div>
+                    </div>
+                    <div class="box-root flex-flex" style="grid-area: 8 / 4 / auto / 6;">
+                        <div class="box-root box-background--gray100 animationLeftRight tans3s"
+                             style="flex-grow: 1;"></div>
+                    </div>
+                    <div class="box-root flex-flex" style="grid-area: 2 / 15 / auto / end;">
+                        <div class="box-root box-background--cyan200 animationRightLeft tans4s"
+                             style="flex-grow: 1;"></div>
+                    </div>
+                    <div class="box-root flex-flex" style="grid-area: 3 / 14 / auto / end;">
+                        <div class="box-root box-background--blue animationRightLeft" style="flex-grow: 1;"></div>
+                    </div>
+                    <div class="box-root flex-flex" style="grid-area: 4 / 17 / auto / 20;">
+                        <div class="box-root box-background--gray100 animationRightLeft tans4s"
+                             style="flex-grow: 1;"></div>
+                    </div>
+                    <div class="box-root flex-flex" style="grid-area: 5 / 14 / auto / 17;">
+                        <div class="box-root box-divider--light-all-2 animationRightLeft tans3s"
+                             style="flex-grow: 1;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+                <div class="box-root padding-top--24 padding-bottom--24 flex-flex flex-justifyContent--center">
+                    <h3>Please provide below resources according to <p style="text-decoration-style: solid;"> "{{ plan_name }}" recovery plan</p></h3>
+                </div>
+                <table>
+                    <thead>
+                    <tr>
+                        <td>
+                            <div class="formbg-outer padding-bottom--15">
+                                <div class="formbg padding-bottom--15" style="text-align: center;">
+                                    <div class="padding-top--48"><h2 style="color: blue;">Required resources</h2></div>
+                                    <span class="padding-top--24">
+                                        {{ resources_avilable }}
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="formbg-outer padding-bottom--15">
+                                <div class="formbg padding-bottom--15" style="text-align: center;">
+                                    <div class="padding-top--48"><h2 style="color: green">Required aids</h2></div>
+                                    <span class="padding-top--24">
+                                        {{ distribution_of_aid }}
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                        <div class="formbg-outer padding-bottom--15">
+                                <div class="formbg padding-bottom--15" style="text-align: center;">
+                                    <div class="padding-top--48"><h2 style="color: red">Maximum response time</h2></div>
+                                    <span class="padding-top--24">
+                                        {{ response_time }} hr
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        {% endif %}
+        <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+            <div class="align-center">
+                <p class="align-center" style="text-align: center; margin-top: 20px;">
+                    <a href="/" style="align-content: center">
+                        Home
+                    </a>
+                </p>
+            </div>
+            <div class="align-center">
+                <p class="align-center" style="text-align: center; margin-top: 20px;">Powered By: <a
+                        class="footer-link"
+                        target="_blank"
+                        href="https://www.brontomind.tech/">BrontoMind
+                    AI Platform</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
