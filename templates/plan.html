@@ -72,36 +72,6 @@
                         <td>
                             <div class="formbg-outer padding-bottom--15">
                                 <div class="formbg padding-bottom--15" style="text-align: center;">
-                                    <div class="padding-top--24"><h2 style="color: blue;">Required Resources</h2></div>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="formbg-outer padding-bottom--15">
-                                <div class="formbg padding-bottom--15" style="text-align: center;">
-                                    <table style="align-content: center; padding: 100px; width: 100%">
-                                        <tr>
-                                            {% for aid in  distribution_of_aid %}
-                                                <td>
-                                                <span class="padding-top--24">
-                                            <img src="static/images/icon/{{ aid.strip() }}.png"
-                                                 style="width: 70px; height: 70px;"/>
-                                                            </span>
-                                                    <span class="padding-top--24">
-                                            {{ aid }}
-                                                            </span>
-                                                </td>
-                                            {% endfor %}
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="formbg-outer padding-bottom--15">
-                                <div class="formbg padding-bottom--15" style="text-align: center;">
                                     <div class="padding-top--24"><h2 style="color: blue;">Required Aids</h2></div>
                                 </div>
                             </div>
@@ -124,6 +94,36 @@
                                             {% for resource in  resources_avilable %}
                                                 <td>
                                                     <span class="padding-top--24">{{ resource }}</span>
+                                                </td>
+                                            {% endfor %}
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="formbg-outer padding-bottom--15">
+                                <div class="formbg padding-bottom--15" style="text-align: center;">
+                                    <div class="padding-top--24"><h2 style="color: blue;">Required Resources</h2></div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="formbg-outer padding-bottom--15">
+                                <div class="formbg padding-bottom--15" style="text-align: center;">
+                                    <table style="align-content: center; padding: 100px; width: 100%">
+                                        <tr>
+                                            {% for aid in  distribution_of_aid %}
+                                                <td>
+                                                <span class="padding-top--24">
+                                            <img src="static/images/icon/{{ aid.strip() }}.png"
+                                                 style="width: 70px; height: 70px;"/>
+                                                            </span>
+                                                    <span class="padding-top--24">
+                                            {{ aid }}
+                                                            </span>
                                                 </td>
                                             {% endfor %}
                                         </tr>
