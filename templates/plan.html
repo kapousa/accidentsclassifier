@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Accidents Monitor</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+<div class="login-root">
+    <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
+        <div class="loginbackground box-background--white padding-top--64">
+            <div class="loginbackground-gridContainer">
+                <div class="box-root flex-flex" style="grid-area: top / start / 8 / end;">
+                    <div class="box-root"
+                         style="background-image: linear-gradient(white 0%, rgb(247, 250, 252) 33%); flex-grow: 1;">
+                    </div>
+                </div>
+                <div class="box-root flex-flex" style="grid-area: 4 / 2 / auto / 5;">
+                    <div class="box-root box-divider--light-all-2 animationLeftRight tans3s"
+                         style="flex-grow: 1;"></div>
+                </div>
+                <div class="box-root flex-flex" style="grid-area: 6 / start / auto / 2;">
+                    <div class="box-root box-background--blue800" style="flex-grow: 1;"></div>
+                </div>
+                <div class="box-root flex-flex" style="grid-area: 7 / start / auto / 4;">
+                    <div class="box-root box-background--blue animationLeftRight" style="flex-grow: 1;"></div>
+                </div>
+                <div class="box-root flex-flex" style="grid-area: 8 / 4 / auto / 6;">
+                    <div class="box-root box-background--gray100 animationLeftRight tans3s" style="flex-grow: 1;"></div>
+                </div>
+                <div class="box-root flex-flex" style="grid-area: 2 / 15 / auto / end;">
+                    <div class="box-root box-background--cyan200 animationRightLeft tans4s" style="flex-grow: 1;"></div>
+                </div>
+                <div class="box-root flex-flex" style="grid-area: 3 / 14 / auto / end;">
+                    <div class="box-root box-background--blue animationRightLeft" style="flex-grow: 1;"></div>
+                </div>
+                <div class="box-root flex-flex" style="grid-area: 4 / 17 / auto / 20;">
+                    <div class="box-root box-background--gray100 animationRightLeft tans4s" style="flex-grow: 1;"></div>
+                </div>
+                <div class="box-root flex-flex" style="grid-area: 5 / 14 / auto / 17;">
+                    <div class="box-root box-divider--light-all-2 animationRightLeft tans3s"
+                         style="flex-grow: 1;"></div>
+                </div>
+            </div>
+        </div>
+        {% if action_plan != "None" %}
+            <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+                <div class="box-root padding-top--24 padding-bottom--24 flex-flex flex-justifyContent--center">
+                    <h1 style="color: blue;">Action Plan</h1>
+                </div>
+                <table>
+                    <tr>
+                        <td>
+                            <div class="formbg-outer padding-bottom--15">
+                                <div class="formbg padding-bottom--15" style="text-align: center;">
+                                    <div class="padding-top--24"><h2 style="color: blue;">Response time</h2></div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="formbg-outer padding-bottom--15">
+                                <div class="formbg padding-bottom--15" style="text-align: center;">
+                                    <img src="static/images/icon/clock.png" style="width: 100px; height: 100px;"/>
+                                    <span class="padding-top--24">
+                    {{ response_time }} HR
+                </span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="formbg-outer padding-bottom--15">
+                                <div class="formbg padding-bottom--15" style="text-align: center;">
+                                    <div class="padding-top--24"><h2 style="color: blue;">Instructions</h2></div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="formbg-outer padding-bottom--15">
+                                <div class="formbg padding-bottom--15" style="text-align: center;">
+                                    <span class="padding-top--24">
+                                        <iframe width="820" height="315" src="{{ plan_video }}">
+                                        </iframe>
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="formbg-outer padding-bottom--15">
+                                <div class="formbg padding-bottom--15" style="text-align: center;">
+                                    <div class="padding-top--24"><h2 style="color: blue;">Required Resources</h2></div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="formbg-outer padding-bottom--15">
+                                <div class="formbg padding-bottom--15" style="text-align: center;">
+                                    <table style="align-content: center; padding: 100px; width: 100%">
+                                        <tr>
+                                            {% for aid in  distribution_of_aid %}
+                                                <td>
+                                                <span class="padding-top--24">
+                                            <img src="static/images/icon/{{ aid.strip() }}.png"
+                                                 style="width: 70px; height: 70px;"/>
+                                                            </span>
+                                                    <span class="padding-top--24">
+                                            {{ aid }}
+                                                            </span>
+                                                </td>
+                                            {% endfor %}
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="formbg-outer padding-bottom--15">
+                                <div class="formbg padding-bottom--15" style="text-align: center;">
+                                    <div class="padding-top--24"><h2 style="color: blue;">Required Aids</h2></div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="formbg-outer padding-bottom--15">
+                                <div class="formbg padding-bottom--15" style="text-align: center;">
+                                    <table style="align-content: center; padding: 100px; width: 100%">
+                                        <tr>
+                                            {% for rname in  resource_name %}
+                                                <td>
+                                                <span class="padding-top--24">
+                                            <img src="static/images/icon/{{ rname.strip() }}.png"
+                                                 style="width: 70px; height: 70px;"/>
+                                                            </span>
+                                                </td>
+                                            {% endfor %}
+                                        </tr>
+                                        <tr>
+                                            {% for resource in  resources_avilable %}
+                                                <td>
+                                                    <span class="padding-top--24">{{ resource }}</span>
+                                                </td>
+                                            {% endfor %}
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        {% endif %}
+    </div>
+</div>
+</body>
+</html>
