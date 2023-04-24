@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-URL = 'https://bmapiproject.herokuapp.com/api/v1/30908139127022/classifydata'
+URL = 'https://bmapiproject.azurewebsites.net/api/v1/30908139127022/classifydata'
 
 resources_available_mapper = {
     "Rear-end collisions": "1 Responders,2 Supplies,0 Boats",
