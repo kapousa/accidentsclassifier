@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'accidentsclassifier'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_821CE40FEFFC4EDE877EBDDCD433777F }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_334AE6E210B34367A2EA7C694298AFD8 }}
