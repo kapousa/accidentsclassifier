@@ -3,6 +3,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+#URL = 'http://127.0.0.1:5001/api/v1/30908139127022/classifydata'
 URL = 'https://bmapiproject.azurewebsites.net/api/v1/30908139127022/classifydata'
 
 resources_available_mapper = {
